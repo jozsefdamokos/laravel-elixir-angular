@@ -36,7 +36,7 @@ elixir.extend('angular', function(src, output, outputFilename) {
             .pipe(concat(outputFilename || 'app.js'))
             .pipe(ngAnnotate())
             .pipe(gulpif(config.production, uglify()))
-            .pipe(sourcemaps.write())
+            .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(output || config.jsOutput))
             .pipe(notify({
                 title: 'Laravel Elixir',
