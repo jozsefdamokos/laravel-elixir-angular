@@ -29,7 +29,7 @@ Elixir.extend('angular', function(src, output, outputFilename) {
         };
 
         // Module inits have to be included first.
-        return gulp.src([baseDir + "*module.js", baseDir + "**/*module.js", baseDir + "**/*.js"])
+        return gulp.src([baseDir + "*module.js", baseDir + "**/*module.js", baseDir + "**/*.js", "!" + baseDir + "**/*.spec.js"])
             .pipe(jshint())
             .pipe(jshint.reporter(stylish))
             .pipe(jshint.reporter('fail')).on('error', onError)
